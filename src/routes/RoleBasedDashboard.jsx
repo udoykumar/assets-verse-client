@@ -4,10 +4,10 @@ import EmployeeDashboard from "../pages/Dashboard/Employee/EmployeeDashboard/Emp
 import HRDashboard from "../pages/Dashboard/HR/HRDashboard/HRDashboard";
 
 export default function RoleBasedDashboard() {
-    const { role, roleLoading } = useRole();
+  const { role, roleLoading } = useRole();
 
-    if (roleLoading) return <Loading />;
+  if (roleLoading) return <Loading />;
 
-    if (role === "hr") return <HRDashboard />;
-    return <EmployeeDashboard />;
+  if (role === "hr") return <HRDashboard />;
+  return <EmployeeDashboard />;
 }
