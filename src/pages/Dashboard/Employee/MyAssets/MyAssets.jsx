@@ -111,6 +111,13 @@ export default function MyAssets() {
 
     doc.save("My_Assets_Report.pdf");
   }
+  if (filtered < 0) {
+    return (
+      <div>
+        <h1>filtered data not available</h1>
+      </div>
+    );
+  }
 
   return (
     <div className="w-full">

@@ -1,7 +1,6 @@
 import { Link, NavLink } from "react-router";
 import useRole from "../../hooks/useRole";
 import Loading from "../../pages/Shared/Loading";
-import mainIcon from "../../../public/mainicon.svg";
 
 export default function DashboardSidebar() {
   const { role, roleLoading } = useRole();
@@ -16,7 +15,7 @@ export default function DashboardSidebar() {
       {/* Title */}
       <div className="p-4 text-2xl font-bold border-b text-primary">
         <Link className="flex items-center gap-2" to={"/dashboard"}>
-          <img className="w-10 h-10" src={mainIcon} />
+          <img className="w-10 h-10" src="/logo.png" />
           Dashboard
         </Link>
       </div>
