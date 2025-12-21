@@ -2,9 +2,12 @@ import { useState } from "react";
 import { Link, Outlet } from "react-router";
 import { FaBars } from "react-icons/fa";
 import DashboardSidebar from "../components/DashboardSidebar/DashboardSidebar";
+import useAuth from "../hooks/useAuth";
 
 export default function DashboardLayout() {
   const [isOpen, setIsOpen] = useState(false);
+  const { user } = useAuth();
+  console.log(user);
 
   return (
     <div className="min-h-screen flex bg-base-200">

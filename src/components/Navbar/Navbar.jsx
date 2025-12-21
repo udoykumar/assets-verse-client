@@ -10,7 +10,7 @@ import useRole from "../../hooks/useRole";
 export default function Navbar() {
   const { user, logOut } = useAuth();
   console.log(user);
-  const { role } = useRole();
+  const { role, roleLoading } = useRole();
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef(null);
   const axiosSecure = useAxiosSecure();
@@ -34,6 +34,10 @@ export default function Navbar() {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
+
+  if (roleLoading) {
+    return <Loading />;
+  }
 
   if (isLoading && user) return <Loading />;
 

@@ -20,8 +20,9 @@ export default function RegisterEmployee() {
 
   const handleEmployeeRegister = async (data) => {
     const profileImg = data.photo[0];
+    console.log(data);
 
-    await registerUser(data.email, data.password)
+    registerUser(data.email, data.password)
       .then(async () => {
         const formData = new FormData();
         formData.append("image", profileImg);

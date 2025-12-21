@@ -10,6 +10,7 @@ import {
 
 export default function EmployeeDashboard() {
   const { user } = useAuth();
+  console.log(user);
 
   return (
     <div className="space-y-10">
