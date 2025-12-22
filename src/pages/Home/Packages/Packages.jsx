@@ -62,7 +62,7 @@ export default function Packages() {
               </p>
               <button
                 onClick={handleChoosePlan}
-                className="btn btn-primary mt-6 w-full"
+                className="btn btn-accent hover:btn-info mt-6 w-full"
               >
                 Choose Plan
               </button>

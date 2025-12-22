@@ -181,7 +181,9 @@ export default function EmployeeProfile() {
         </div>
 
         {/* SUBMIT BTN */}
-        <button className="btn btn-primary w-full mt-4">Update Profile</button>
+        <button className="btn btn-accent hover:btn-info w-full mt-4">
+          Update Profile
+        </button>
       </form>
     </div>
   );

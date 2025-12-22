@@ -152,7 +152,7 @@ export default function RequestAsset() {
       {/* PAGINATION CONTROLS */}
       <div className="flex justify-center mt-8 gap-2">
         <button
-          className="btn btn-sm"
+          className="btn btn-sm btn-accent hover:btn-info"
           disabled={page === 1}
           onClick={() => setPage((prev) => prev - 1)}
         >
@@ -162,7 +162,7 @@ export default function RequestAsset() {
         {[...Array(totalPages).keys()].map((num) => (
           <button
             key={num}
-            className={`btn btn-sm ${page === num + 1 ? "btn-primary" : ""}`}
+            className={`btn btn-sm ${page === num + 1 ? "btn-accent" : ""}`}
             onClick={() => setPage(num + 1)}
           >
             {num + 1}
@@ -170,7 +170,7 @@ export default function RequestAsset() {
         ))}
 
         <button
-          className="btn btn-sm"
+          className="btn btn-sm btn-accent"
           disabled={page === totalPages}
           onClick={() => setPage((prev) => prev + 1)}
         >
@@ -196,7 +196,7 @@ export default function RequestAsset() {
 
             <div className="mt-4 flex gap-3">
               <button
-                className="btn btn-primary flex-1"
+                className="btn btn-accent hover:btn-info flex-1"
                 onClick={handleRequest}
               >
                 Submit

@@ -145,7 +145,7 @@ export default function MyAssets() {
 
         {/* PRINT BUTTON */}
         <button
-          className="btn btn-primary mb-4 md:w-1/4"
+          className="btn btn-accent hover:btn-info mb-4 md:w-1/4"
           onClick={() => handlePrintPDF(filtered)}
         >
           Download PDF

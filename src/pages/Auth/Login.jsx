@@ -54,7 +54,7 @@ export default function Login() {
             </span>
           </div>
 
-          <button className="btn btn-primary w-full">Login</button>
+          <button className="btn btn-accent w-full">Login</button>
         </form>
 
         <SocialLogin></SocialLogin>

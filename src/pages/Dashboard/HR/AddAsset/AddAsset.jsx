@@ -176,7 +176,7 @@ export default function AddAsset() {
         </div>
 
         {/* SUBMIT BUTTON */}
-        <button className="btn btn-primary w-full" disabled={isSubmitting}>
+        <button className="btn btn-accent hover:btn-info w-full" disabled={isSubmitting}>
           {isSubmitting ? "Adding..." : "Add Asset"}
         </button>
       </form>

@@ -104,7 +104,7 @@ export default function UpgradePackage() {
               <button className="btn btn-disabled mt-4">Upgraded</button>
             ) : (
               <button
-                className="btn btn-primary mt-4"
+                className="btn btn-accent hover:btn-info mt-4"
                 onClick={() => handleUpgrade(pack)}
               >
                 Upgrade

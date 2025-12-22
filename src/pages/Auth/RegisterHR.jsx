@@ -140,7 +140,7 @@ export default function RegisterHR() {
                         required
                     />
 
-                    <button className="btn btn-primary w-full">Register</button>
+                    <button className="btn btn-accent w-full">Register</button>
                 </form>
 
                 <p className="text-center mt-4">
