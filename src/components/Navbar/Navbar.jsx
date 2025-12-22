@@ -11,6 +11,7 @@ export default function Navbar() {
   const { user, logOut } = useAuth();
   console.log(user);
   const { role, roleLoading } = useRole();
+  console.log(role);
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef(null);
   const axiosSecure = useAxiosSecure();
@@ -172,55 +173,57 @@ export default function Navbar() {
   // =================== RENDER =================== //
 
   return (
-    <div className="navbar bg-base-100 shadow px-6 md:px-12 relative">
-      {/* LOGO */}
-      <div className="flex-1">
-        <Link
-          to="/"
-          className="text-2xl font-bold flex items-center gap-2 w-fit"
-        >
-          <img className="w-10 h-10" src="./logo.png" alt="" />
-          AssetVerse
-        </Link>
-      </div>
+    <div className="fixed top-0 right-0 left-0 z-10 bg-base-100 shadow">
+      <div className="navbar  px-6 md:px-12 relative max-w-7xl mx-auto">
+        {/* LOGO */}
+        <div className="flex-1">
+          <Link
+            to="/"
+            className="text-2xl font-bold flex items-center gap-2 w-fit"
+          >
+            <img className="w-10 h-10" src="./logo.png" alt="" />
+            AssetVerse
+          </Link>
+        </div>
 
-      {/* DESKTOP LINKS */}
-      <div className="hidden lg:flex gap-6 items-center">
-        {!user && publicLinks}
-        {user && role === "employee" && employeeLinksDesktop}
-        {user && role === "hr" && hrLinksDesktop}
+        {/* DESKTOP LINKS */}
+        <div className="hidden lg:flex gap-6 items-center">
+          {!user && publicLinks}
+          {user && role === "employee" && employeeLinksDesktop}
+          {user && role === "hr" && hrLinksDesktop}
 
-        {user && (
-          <button onClick={logOut} className="btn btn-error btn-sm">
-            Logout
+          {user && (
+            <button onClick={logOut} className="btn btn-error btn-sm">
+              Logout
+            </button>
+          )}
+        </div>
+
+        {/* MOBILE MENU BUTTON */}
+        <div className="lg:hidden" ref={menuRef}>
+          <button
+            className="text-2xl cursor-pointer hover:bg-base-200 p-2 rounded"
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            <FaBars />
           </button>
-        )}
-      </div>
 
-      {/* MOBILE MENU BUTTON */}
-      <div className="lg:hidden" ref={menuRef}>
-        <button
-          className="text-2xl cursor-pointer hover:bg-base-200 p-2 rounded"
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
-          <FaBars />
-        </button>
+          {/* MOBILE DROPDOWN */}
+          {menuOpen && (
+            <div className="absolute right-4 top-16 w-60 bg-base-100 shadow-lg rounded-lg p-4 flex flex-col gap-3 z-50">
+              {!user && publicLinks}
 
-        {/* MOBILE DROPDOWN */}
-        {menuOpen && (
-          <div className="absolute right-4 top-16 w-60 bg-base-100 shadow-lg rounded-lg p-4 flex flex-col gap-3 z-50">
-            {!user && publicLinks}
+              {user && role === "employee" && employeeLinksMobile}
+              {user && role === "hr" && hrLinksMobile}
 
-            {user && role === "employee" && employeeLinksMobile}
-            {user && role === "hr" && hrLinksMobile}
-
-            {user && (
-              <button onClick={logOut} className="btn btn-error btn-sm mt-2">
-                Logout
-              </button>
-            )}
-          </div>
-        )}
+              {user && (
+                <button onClick={logOut} className="btn btn-error btn-sm mt-2">
+                  Logout
+                </button>
+              )}
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

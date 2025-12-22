@@ -1,5 +1,7 @@
 {
   "projects": {
-    "default": "assetverse-11010"
-  }
+    "default": "corporate-asset-manageme-8e91f"
+  },
+  "targets": {},
+  "etags": {}
 }

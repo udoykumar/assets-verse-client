@@ -106,10 +106,12 @@ export default function RequestAsset() {
             key={asset._id}
             className="bg-base-100 p-4 rounded-lg shadow hover:shadow-lg transition flex flex-col"
           >
-            <img
-              src={asset.productImage}
-              className="w-full h-40 object-cover rounded-md"
-            />
+            <div className="w-full h-full ">
+              <img
+                src={asset.productImage}
+                className="w-full h-60 object-cover rounded-md scale-100 hover:scale-110 duration-150 ease-in-out"
+              />
+            </div>
 
             <h3 className="text-xl font-semibold mt-3 flex-1">
               {asset.productName}
@@ -121,7 +123,15 @@ export default function RequestAsset() {
 
             <p className="text-sm mt-1">
               Type:{" "}
-              <span className="badge badge-outline">{asset.productType}</span>
+              <span
+                className={`badge ${
+                  asset.productType === "Returnable"
+                    ? "badge-success"
+                    : " badge-error"
+                } `}
+              >
+                {asset.productType}
+              </span>
             </p>
 
             <p className="text-sm mt-1">
@@ -130,7 +140,7 @@ export default function RequestAsset() {
             </p>
 
             <button
-              className="btn btn-primary w-full mt-4"
+              className="btn btn-accent hover:btn-info w-full mt-4"
               onClick={() => setSelectedAsset(asset)}
             >
               Request
