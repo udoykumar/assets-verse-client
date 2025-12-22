@@ -8,7 +8,7 @@ export default function Hero() {
           initial={{ opacity: 0, x: 60 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          src=""
+          src="https://ik.imagekit.io/2y9ou0dfzs/portfolio-8.jpg?updatedAt=1763392069961"
           className="max-w-lg rounded-lg shadow-2xl w-full"
         />
 

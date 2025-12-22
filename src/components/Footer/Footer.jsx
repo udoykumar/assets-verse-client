@@ -91,9 +91,17 @@ export default function Footer() {
   );
 
   return (
-    <footer className="bg-base-200 text-base-content mt-10 border-t">
-      <div className="container mx-auto px-6 py-10">
-        {/* Top Section */}
+    <footer className="relative overflow-hidden bg-black text-white">
+      {/* Gradient Overlays (NO CLICK BLOCK) */}
+      <div className="absolute inset-0 bg-gradient-to-tr from-black/30 via-[#0b1d2d]/70 to-black/40 pointer-events-none"></div>
+
+      <div
+        className="absolute -top-32 left-1/2 -translate-x-1/2 w-[600px] h-[600px]
+    bg-gradient-to-r from-blue-500/20 to-cyan-400/10 rounded-full blur-3xl pointer-events-none"
+      ></div>
+
+      {/* Content */}
+      <div className="relative z-20 container mx-auto px-6 py-10">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* About */}
           <div>
@@ -109,9 +117,7 @@ export default function Footer() {
             <h3 className="font-semibold text-lg mb-3">Quick Links</h3>
             <ul className="space-y-2 text-sm">
               {!user && publicLinks}
-
               {user && role === "employee" && employeeLinks}
-
               {user && role === "hr" && hrLinks}
             </ul>
           </div>
@@ -129,39 +135,24 @@ export default function Footer() {
           {/* Socials */}
           <div>
             <h3 className="font-semibold text-lg mb-3">Follow Us</h3>
-            <div className="flex items-center space-x-1 text-white">
-              <a
-                href="#"
-                className="text-2xl bg-[#0a86f2] rounded-full p-2 transition"
-              >
+            <div className="flex items-center space-x-2">
+              <a className="text-2xl bg-[#0a86f2] rounded-full p-2 hover:scale-110 transition">
                 <FaFacebookF />
               </a>
-
-              <a
-                href="#"
-                className="text-2xl  bg-[#fa3f88] rounded-full p-2 transition"
-              >
+              <a className="text-2xl bg-[#fa3f88] rounded-full p-2 hover:scale-110 transition">
                 <FaInstagram />
               </a>
-
-              <a
-                href="#"
-                className="text-2xl  bg-[#0c67c2] rounded-full p-2 transition"
-              >
+              <a className="text-2xl bg-[#0c67c2] rounded-full p-2 hover:scale-110 transition">
                 <FaLinkedin />
               </a>
-
-              <a
-                href="#"
-                className="text-2xl bg-[#190131] rounded-full p-2 transition"
-              >
+              <a className="text-2xl bg-[#190131] rounded-full p-2 hover:scale-110 transition">
                 <FaXTwitter />
               </a>
             </div>
           </div>
         </div>
 
-        {/* Bottom section */}
+        {/* Bottom */}
         <div className="text-center mt-10 pt-6 border-t text-sm">
           © {new Date().getFullYear()} AssetVerse — All Rights Reserved.
         </div>
