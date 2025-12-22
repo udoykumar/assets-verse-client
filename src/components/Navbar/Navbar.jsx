@@ -2,10 +2,13 @@ import { Link } from "react-router";
 import useAuth from "../../hooks/useAuth";
 import Loading from "../../pages/Shared/Loading";
 import { useEffect, useRef, useState } from "react";
-import { FaBars } from "react-icons/fa";
+import { FaBars, FaClipboardList, FaHome, FaUser } from "react-icons/fa";
 import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import useRole from "../../hooks/useRole";
+import { FaAddressCard } from "react-icons/fa";
+import { MdSpaceDashboard } from "react-icons/md";
+import { FaBarsProgress } from "react-icons/fa6";
 
 export default function Navbar() {
   const { user, logOut } = useAuth();
@@ -46,19 +49,29 @@ export default function Navbar() {
 
   const employeeLinksDesktop = (
     <>
-      <Link className="hover:text-primary" to="/dashboard">
+      <Link className="hover:text-primary flex items-center" to="/dashboard">
+        <MdSpaceDashboard className="mr-2 text-xl" />
         Dashboard
       </Link>
-      <Link className="hover:text-primary" to="/dashboard/employee/my-assets">
+      <Link
+        className="hover:text-primary flex items-center"
+        to="/dashboard/employee/my-assets"
+      >
+        <FaBarsProgress className="mr-2 text-xl" />
         My Assets
       </Link>
       <Link
-        className="hover:text-primary"
+        className="hover:text-primary flex items-center"
         to="/dashboard/employee/request-asset"
       >
+        <FaClipboardList className="mr-2 text-xl" />
         Request Asset
       </Link>
-      <Link className="hover:text-primary" to="/dashboard/employee/my-team">
+      <Link
+        className="hover:text-primary flex items-center "
+        to="/dashboard/employee/my-team"
+      >
+        <FaUser className="mr-2 text-xl" />
         My Team
       </Link>
       <Link
@@ -73,22 +86,37 @@ export default function Navbar() {
 
   const employeeLinksMobile = (
     <>
-      <Link className="hover:text-primary" to="/dashboard">
+      <Link className="hover:text-primary flex items-center" to="/dashboard">
+        <MdSpaceDashboard className="mr-2 text-xl" />
         Dashboard
       </Link>
-      <Link className="hover:text-primary" to="/dashboard/employee/my-assets">
+      <Link
+        className="hover:text-primary flex items-center"
+        to="/dashboard/employee/my-assets"
+      >
+        <FaBarsProgress className="mr-2 text-xl" />
         My Assets
       </Link>
       <Link
-        className="hover:text-primary"
+        className="hover:text-primary flex items-center"
         to="/dashboard/employee/request-asset"
       >
+        <FaClipboardList className="mr-2 text-xl" />
         Request Asset
       </Link>
-      <Link className="hover:text-primary" to="/dashboard/employee/my-team">
+      <Link
+        className="hover:text-primary flex items-center "
+        to="/dashboard/employee/my-team"
+      >
+        <FaUser className="mr-2 text-xl" />
         My Team
       </Link>
-      <Link className="hover:text-primary" to="/dashboard/employee/profile">
+
+      <Link
+        className="hover:text-primary flex items-center"
+        to="/dashboard/employee/profile"
+      >
+        <FaUser className="mr-2 text-xl" />
         My Profile
       </Link>
     </>
@@ -96,10 +124,12 @@ export default function Navbar() {
 
   const hrLinksDesktop = (
     <>
-      <Link className="hover:text-primary" to="/dashboard">
+      <Link className="hover:text-primary flex items-center" to="/dashboard">
+        <MdSpaceDashboard className="mr-2 text-xl" />
         Dashboard
       </Link>
       <Link className="hover:text-primary" to="/dashboard/hr/assets">
+        <FaBarsProgress className="mr-2 text-xl" />
         Asset List
       </Link>
       <Link className="hover:text-primary" to="/dashboard/hr/add-asset">
@@ -155,13 +185,19 @@ export default function Navbar() {
 
   const publicLinks = (
     <>
-      <Link className="hover:text-primary" to="/">
+      <Link className="hover:text-primary flex items-center" to="/">
+        <FaHome className="mr-2 text-2xl" />
         Home
       </Link>
-      <Link className="hover:text-primary" to="/register-employee">
+      <Link
+        className="hover:text-primary flex items-center"
+        to="/register-employee"
+      >
+        <FaAddressCard className="mr-2 text-2xl" />
         Join as Employee
       </Link>
-      <Link className="hover:text-primary" to="/register-hr">
+      <Link className="hover:text-primary flex items-center" to="/register-hr">
+        <FaAddressCard className="mr-2 text-2xl" />
         Join as HR Manager
       </Link>
       <Link to="/login" className="btn btn-primary btn-sm">
@@ -174,7 +210,7 @@ export default function Navbar() {
 
   return (
     <div className="fixed top-0 right-0 left-0 z-10 bg-base-100 shadow">
-      <div className="navbar  px-6 md:px-12 relative max-w-7xl mx-auto">
+      <div className="navbar  px-6 md:px-12 relative container mx-auto">
         {/* LOGO */}
         <div className="flex-1">
           <Link
