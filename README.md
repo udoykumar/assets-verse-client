@@ -27,9 +27,9 @@ This repository contains the full frontend (client-side) implementation using:
 
 ### Smart Asset & HR Management Platform
 
-**Live Demo** →
+**Live Demo** → https://corporate-asset-manageme-8e91f.web.app/
 
-**Backend Repo** →
+**Repository link** → https://github.com/udoykumar/assets-verse-client.git
 
 ---
 

@@ -12,9 +12,9 @@ import { FaBarsProgress } from "react-icons/fa6";
 
 export default function Navbar() {
   const { user, logOut } = useAuth();
-  console.log(user);
+
   const { role, roleLoading } = useRole();
-  console.log(role);
+
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef(null);
   const axiosSecure = useAxiosSecure();
