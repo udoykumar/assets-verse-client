@@ -5,7 +5,7 @@ export default function ContactCTA() {
   const { user } = useAuth();
   const { role } = useRole();
   return (
-    <section className="text-center bg-black/90 rounded-2xl text-white py-16 mt-20 max-w-7xl mx-auto">
+    <section className="text-center bg-white rounded-2xl text-black py-16 mt-20 max-w-7xl mx-auto">
       <h2 className="text-4xl font-bold">Ready to Get Started?</h2>
       <p className="mt-3 text-lg px-5">
         Join AssetVerse today and streamline your workflow.

@@ -5,7 +5,6 @@ import Loading from "../pages/Shared/Loading";
 
 const PrivateRoute = ({ children }) => {
   const { user, loading } = useAuth();
-  console.log(user);
   const location = useLocation();
 
   if (loading) {

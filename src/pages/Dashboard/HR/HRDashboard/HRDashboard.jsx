@@ -26,7 +26,7 @@ import useAxiosSecure from "../../../../hooks/useAxiosSecure";
 
 export default function HRDashboard() {
   const { user } = useAuth();
-  console.log(user);
+
   const axiosSecure = useAxiosSecure();
 
   const { data: distribution = {} } = useQuery({
