@@ -1,6 +1,6 @@
 # 🚀 AssetVerse — Frontend
 
-## **Modern HR & Asset Management Platform (React + Firebase + JWT + TanStack Query)**
+## **Modern HR & Asset Management Platform (React + Firebase + sdk token + TanStack Query)**
 
 AssetVerse is a complete HR-focused asset management system that helps companies manage employees, assets, requests, affiliations, analytics, and subscriptions.
 This repository contains the full frontend (client-side) implementation using:
@@ -9,7 +9,7 @@ This repository contains the full frontend (client-side) implementation using:
 
 - **Firebase Authentication**
 
-- **JWT Authorization**
+- **firebase Authorization**
 
 - **TanStack Query**
 
@@ -160,56 +160,6 @@ This repository contains the full frontend (client-side) implementation using:
 
 ---
 
-## 📂 Project Structure
-
-```
-src/
-│
-├── components/
-│   ├── Navbar/
-│   ├── Footer/
-│   ├── SocialLogin/
-│   ├── DashboardSidebar/
-│   └── ...
-│
-├── pages/
-│   ├── Auth/
-│   ├── ErrorPage/
-│   ├── Home/
-│   ├── Shared/
-│   ├── Dashboard/
-│   │    ├── HR/
-│   │    └── Employee/
-│   └── ...
-│
-├── hooks/
-│   ├── useAuth.jsx
-│   ├── useAxios.jsx
-│   ├── useAxiosSecure.jsx
-│   ├── useRole.jsx
-│   └── ...
-│
-├── layouts/
-│   ├── DashboardLayout.jsx
-│   └── RootLayout.jsx
-│
-├── providers/
-│   ├── AuthContext.jsx
-│   └── AuthProvider.jsx
-│
-├── routes/
-│   ├── AdminRoute.jsx
-│   ├── EmployeeRoute.jsx
-│   ├── PrivateRoute.jsx
-│   ├── RoleBasedDashboard.jsx
-│   └── routes.jsx
-│
-└── firebase/
-    └── firebase.config.js
-```
-
----
-
 ## ⚙️ Environment Variables
 
 Create a .env file:
@@ -241,13 +191,7 @@ axiosInstance.post("/jwt", { email: currentUser.email })
 Backend responds with:
 
 ```bash
-{ "token": "JWT_TOKEN_HERE" }
-```
-
-Stored at:
-
-```bash
-localStorage.setItem("access-token", token)
+{ "token": "firebase sdk token" }
 ```
 
 ### 🔹 STEP 3: All secure requests go through `useAxiosSecure`:
@@ -356,7 +300,7 @@ VITE_API_URL=https://your-backend.com
 
 - Ensure .env contains:
 
-  - JWT_SECRET
+  - SECRET_key
 
   - Stripe keys
 
@@ -382,6 +326,6 @@ VITE_API_URL=https://your-backend.com
 
 ## ❤️ Credits
 
-Developed by **MD. Ebrahim Ali**
+Developed by **Udoy Kumar Pal**
 
 AssetVerse — HR & Asset Management

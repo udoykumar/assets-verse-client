@@ -1,6 +1,9 @@
 import { Link, NavLink } from "react-router";
 import useRole from "../../hooks/useRole";
 import Loading from "../../pages/Shared/Loading";
+import { FaBox, FaHome, FaUser } from "react-icons/fa";
+import { FaBarsProgress } from "react-icons/fa6";
+import { MdInventory, MdRequestPage } from "react-icons/md";
 
 export default function DashboardSidebar() {
   const { role, roleLoading } = useRole();
@@ -8,7 +11,7 @@ export default function DashboardSidebar() {
   if (roleLoading) return <Loading />;
 
   // ACTIVE STYLE for DaisyUI
-  const activeClass = "bg-primary text-white font-semibold rounded-lg";
+  const activeClass = "bg-accent text-white font-semibold rounded-lg";
 
   return (
     <aside className="w-64 bg-base-100 shadow-md min-h-screen h-full">
@@ -25,8 +28,9 @@ export default function DashboardSidebar() {
         <li>
           <NavLink
             to="/"
-            className={({ isActive }) => (isActive ? activeClass : "")}
+            className={`({ isActive }) => (isActive ? activeClass : "") `}
           >
+            <FaHome />
             Home
           </NavLink>
         </li>
@@ -39,6 +43,7 @@ export default function DashboardSidebar() {
                 to="/dashboard/employee/my-assets"
                 className={({ isActive }) => (isActive ? activeClass : "")}
               >
+                <FaBarsProgress className="mr-2 text-xl" />
                 My Assets
               </NavLink>
             </li>
@@ -80,6 +85,7 @@ export default function DashboardSidebar() {
                 to="/dashboard/hr/assets"
                 className={({ isActive }) => (isActive ? activeClass : "")}
               >
+                <FaBarsProgress className="mr-2 text-xl" />
                 Asset List
               </NavLink>
             </li>
@@ -89,6 +95,7 @@ export default function DashboardSidebar() {
                 to="/dashboard/hr/add-asset"
                 className={({ isActive }) => (isActive ? activeClass : "")}
               >
+                <MdInventory className="mr-2 text-xl" />
                 Add Asset
               </NavLink>
             </li>
@@ -98,6 +105,7 @@ export default function DashboardSidebar() {
                 to="/dashboard/hr/requests"
                 className={({ isActive }) => (isActive ? activeClass : "")}
               >
+                <MdRequestPage className="mr-2 text-xl" />
                 All Requests
               </NavLink>
             </li>
@@ -107,6 +115,7 @@ export default function DashboardSidebar() {
                 to="/dashboard/hr/employees"
                 className={({ isActive }) => (isActive ? activeClass : "")}
               >
+                <FaBarsProgress className="mr-2 text-xl" />
                 Employee List
               </NavLink>
             </li>
@@ -116,6 +125,7 @@ export default function DashboardSidebar() {
                 to="/dashboard/hr/upgrade"
                 className={({ isActive }) => (isActive ? activeClass : "")}
               >
+                <FaBox className="mr-2 text-xl" />
                 Upgrade Package
               </NavLink>
             </li>
@@ -125,6 +135,7 @@ export default function DashboardSidebar() {
                 to="/dashboard/hr/profile"
                 className={({ isActive }) => (isActive ? activeClass : "")}
               >
+                <FaUser />
                 Profile
               </NavLink>
             </li>
