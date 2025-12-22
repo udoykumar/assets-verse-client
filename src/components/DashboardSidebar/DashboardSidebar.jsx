@@ -1,9 +1,9 @@
 import { Link, NavLink } from "react-router";
 import useRole from "../../hooks/useRole";
 import Loading from "../../pages/Shared/Loading";
-import { FaBox, FaHome, FaUser } from "react-icons/fa";
+import { FaBox, FaClipboardList, FaHome, FaUser } from "react-icons/fa";
 import { FaBarsProgress } from "react-icons/fa6";
-import { MdInventory, MdRequestPage } from "react-icons/md";
+import { MdGroup, MdInventory, MdRequestPage } from "react-icons/md";
 
 export default function DashboardSidebar() {
   const { role, roleLoading } = useRole();
@@ -53,6 +53,7 @@ export default function DashboardSidebar() {
                 to="/dashboard/employee/request-asset"
                 className={({ isActive }) => (isActive ? activeClass : "")}
               >
+                <FaClipboardList className="mr-2 text-xl" />
                 Request Asset
               </NavLink>
             </li>
@@ -62,6 +63,7 @@ export default function DashboardSidebar() {
                 to="/dashboard/employee/my-team"
                 className={({ isActive }) => (isActive ? activeClass : "")}
               >
+                <MdGroup className="mr-2 text-xl" />
                 My Team
               </NavLink>
             </li>
@@ -71,6 +73,7 @@ export default function DashboardSidebar() {
                 to="/dashboard/employee/profile"
                 className={({ isActive }) => (isActive ? activeClass : "")}
               >
+                <FaUser className="mr-2 text-xl" />
                 Profile
               </NavLink>
             </li>

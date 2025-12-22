@@ -7,7 +7,12 @@ import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import useRole from "../../hooks/useRole";
 import { FaAddressCard } from "react-icons/fa";
-import { MdInventory, MdRequestPage, MdSpaceDashboard } from "react-icons/md";
+import {
+  MdGroup,
+  MdInventory,
+  MdRequestPage,
+  MdSpaceDashboard,
+} from "react-icons/md";
 import { FaBarsProgress } from "react-icons/fa6";
 
 export default function Navbar() {
@@ -71,7 +76,7 @@ export default function Navbar() {
         className="hover:text-primary flex items-center "
         to="/dashboard/employee/my-team"
       >
-        <FaUser className="mr-2 text-xl" />
+        <MdGroup className="mr-2 text-xl" />
         My Team
       </Link>
       <Link
@@ -108,7 +113,7 @@ export default function Navbar() {
         className="hover:text-primary flex items-center "
         to="/dashboard/employee/my-team"
       >
-        <FaUser className="mr-2 text-xl" />
+        <MdGroup className="mr-2 text-xl" />
         My Team
       </Link>
 
@@ -146,7 +151,7 @@ export default function Navbar() {
         className="hover:text-primary flex items-center"
         to="/dashboard/hr/requests"
       >
-        <MdRequestPage className="mr-2 text-xl" />
+        <FaClipboardList className="mr-2 text-xl" />
         All Requests
       </Link>
       <Link
@@ -178,25 +183,51 @@ export default function Navbar() {
 
   const hrLinksMobile = (
     <>
-      <Link className="hover:text-primary" to="/dashboard">
+      <Link className="hover:text-primary flex items-center" to="/dashboard">
+        <MdSpaceDashboard className="mr-2 text-xl" />
         Dashboard
       </Link>
-      <Link className="hover:text-primary" to="/dashboard/hr/assets">
+      <Link
+        className="hover:text-primary flex items-center"
+        to="/dashboard/hr/assets"
+      >
+        <FaBarsProgress className="mr-2 text-xl" />
         Asset List
       </Link>
-      <Link className="hover:text-primary" to="/dashboard/hr/add-asset">
+      <Link
+        className="hover:text-primary flex items-center"
+        to="/dashboard/hr/add-asset"
+      >
+        <MdInventory className="mr-2 text-xl" />
         Add Asset
       </Link>
-      <Link className="hover:text-primary" to="/dashboard/hr/requests">
+      <Link
+        className="hover:text-primary flex items-center"
+        to="/dashboard/hr/requests"
+      >
+        <FaClipboardList className="mr-2 text-xl" />
         All Requests
       </Link>
-      <Link className="hover:text-primary" to="/dashboard/hr/employees">
+      <Link
+        className="hover:text-primary flex items-center"
+        to="/dashboard/hr/employees"
+      >
+        <FaBarsProgress className="mr-2 text-xl" />
         Employee List
       </Link>
-      <Link className="hover:text-primary" to="/dashboard/hr/upgrade">
+      <Link
+        className="hover:text-primary flex items-center"
+        to="/dashboard/hr/upgrade"
+      >
+        <FaBox className="mr-2 text-xl" />
         Upgrade Package
       </Link>
-      <Link className="hover:text-primary" to="/dashboard/hr/profile">
+
+      <Link
+        className="hover:text-primary flex items-center"
+        to="/dashboard/hr/profile"
+      >
+        <FaUser className="mr-2 text-xl" />
         HR Profile
       </Link>
     </>
