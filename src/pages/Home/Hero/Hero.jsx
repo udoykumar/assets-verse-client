@@ -8,7 +8,7 @@ export default function Hero() {
           initial={{ opacity: 0, x: 60 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          src="https://images.unsplash.com/photo-1761735486587-bcac08b15c79?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          src=""
           className="max-w-lg rounded-lg shadow-2xl w-full"
         />
 
