@@ -44,12 +44,12 @@ export default function Testimonials() {
             <SwiperSlide key={i} className="h-auto flex mb-4">
               <div className="p-6 bg-base-100 rounded-xl shadow w-full border">
                 <p className="italic text-gray-600 mb-4 min-h-[70px]">
-                  “{item.review}”
+                  “{item.testimonial}”
                 </p>
-                <h3 className="font-bold text-lg">{item.company}</h3>
-                <p className="text-md text-gray-800">{item.author}</p>
+                <h3 className="font-bold text-lg">{item.companyName}</h3>
+                <p className="text-md text-gray-800">{item.personName}</p>
                 <p className="text-sm text-gray-400">
-                  Position: {item.position}
+                  designation: {item.designation}
                 </p>
               </div>
             </SwiperSlide>
