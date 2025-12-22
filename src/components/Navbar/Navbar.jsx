@@ -2,12 +2,12 @@ import { Link } from "react-router";
 import useAuth from "../../hooks/useAuth";
 import Loading from "../../pages/Shared/Loading";
 import { useEffect, useRef, useState } from "react";
-import { FaBars, FaClipboardList, FaHome, FaUser } from "react-icons/fa";
+import { FaBars, FaBox, FaClipboardList, FaHome, FaUser } from "react-icons/fa";
 import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import useRole from "../../hooks/useRole";
 import { FaAddressCard } from "react-icons/fa";
-import { MdSpaceDashboard } from "react-icons/md";
+import { MdInventory, MdRequestPage, MdSpaceDashboard } from "react-icons/md";
 import { FaBarsProgress } from "react-icons/fa6";
 
 export default function Navbar() {
@@ -128,20 +128,39 @@ export default function Navbar() {
         <MdSpaceDashboard className="mr-2 text-xl" />
         Dashboard
       </Link>
-      <Link className="hover:text-primary" to="/dashboard/hr/assets">
+      <Link
+        className="hover:text-primary flex items-center"
+        to="/dashboard/hr/assets"
+      >
         <FaBarsProgress className="mr-2 text-xl" />
         Asset List
       </Link>
-      <Link className="hover:text-primary" to="/dashboard/hr/add-asset">
+      <Link
+        className="hover:text-primary flex items-center"
+        to="/dashboard/hr/add-asset"
+      >
+        <MdInventory className="mr-2 text-xl" />
         Add Asset
       </Link>
-      <Link className="hover:text-primary" to="/dashboard/hr/requests">
+      <Link
+        className="hover:text-primary flex items-center"
+        to="/dashboard/hr/requests"
+      >
+        <MdRequestPage className="mr-2 text-xl" />
         All Requests
       </Link>
-      <Link className="hover:text-primary" to="/dashboard/hr/employees">
+      <Link
+        className="hover:text-primary flex items-center"
+        to="/dashboard/hr/employees"
+      >
+        <FaBarsProgress className="mr-2 text-xl" />
         Employee List
       </Link>
-      <Link className="hover:text-primary" to="/dashboard/hr/upgrade">
+      <Link
+        className="hover:text-primary flex items-center"
+        to="/dashboard/hr/upgrade"
+      >
+        <FaBox className="mr-2 text-xl" />
         Upgrade Package
       </Link>
       <Link
