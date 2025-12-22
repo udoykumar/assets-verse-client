@@ -26,9 +26,10 @@ This repository contains the full frontend (client-side) implementation using:
 ---
 
 ### Smart Asset & HR Management Platform
-**Live Demo** → https://assetverse.netlify.app/
 
-**Backend Repo** → https://github.com/ebrahim2355/assetverse-server
+**Live Demo** →
+
+**Backend Repo** →
 
 ---
 
@@ -48,11 +49,11 @@ This repository contains the full frontend (client-side) implementation using:
 
 - Role-based UI:
 
-    - HR Dashboard
+  - HR Dashboard
 
-    - Employee Dashboard
+  - Employee Dashboard
 
-    - Global role resolver hook (useRole)
+  - Global role resolver hook (useRole)
 
 ────────────
 
@@ -64,9 +65,9 @@ This repository contains the full frontend (client-side) implementation using:
 
 - Frontend blocks pages depending on:
 
-    - user authentication
+  - user authentication
 
-    - user role (HR / Employee)
+  - user role (HR / Employee)
 
 ────────────
 
@@ -141,7 +142,9 @@ This repository contains the full frontend (client-side) implementation using:
 ---
 
 ## 🛠️ Tech Stack
+
 ### Frontend
+
 | Technology               | Purpose                  |
 | ------------------------ | ------------------------ |
 | **React (Vite)**         | UI Framework             |
@@ -158,6 +161,7 @@ This repository contains the full frontend (client-side) implementation using:
 ---
 
 ## 📂 Project Structure
+
 ```
 src/
 │
@@ -203,10 +207,13 @@ src/
 └── firebase/
     └── firebase.config.js
 ```
+
 ---
 
 ## ⚙️ Environment Variables
+
 Create a .env file:
+
 ```bash
 VITE_apiKey=xxxx
 VITE_authDomain=xxxx
@@ -222,27 +229,35 @@ VITE_image_host_key=xxxx
 ## 🔑 Authentication Workflow (Frontend + Backend)
 
 ### 🔹 STEP 1: User Logs In
+
 Firebase authenticates them → returns a user object.
 
 ### 🔹 STEP 2: `AuthProvider` sends request:
+
 ```bash
 axiosInstance.post("/jwt", { email: currentUser.email })
 ```
+
 Backend responds with:
+
 ```bash
 { "token": "JWT_TOKEN_HERE" }
 ```
+
 Stored at:
+
 ```bash
 localStorage.setItem("access-token", token)
 ```
 
 ### 🔹 STEP 3: All secure requests go through `useAxiosSecure`:
+
 ```bash
 config.headers.Authorization = `Bearer ${token}`;
 ```
 
 ### 🔹 STEP 4: If backend returns 401/403:
+
 `logOut()`
 
 You are redirected to login.
@@ -250,11 +265,15 @@ You are redirected to login.
 ---
 
 ## 👮 Role Detection Logic
+
 Using:
+
 ```bash
 const { role } = useRole();
 ```
+
 Which calls:
+
 ```bash
 GET /users/:email/role
 ```
@@ -270,7 +289,9 @@ Role determines the UI and dashboard access.
 ---
 
 ## 🔄 Pagination & Search Example
+
 Frontend:
+
 ```bash
 /assets?available=true&page=2&limit=6&search=laptop
 ```
@@ -280,6 +301,7 @@ Backend:
 - Uses `skip`, `limit`, regex search
 
 - Returns:
+
 ```bash
 {
   "total": 42,
@@ -317,28 +339,33 @@ Backend:
 ---
 
 ## 🚀 Deployment Notes
+
 ### For Frontend (Vercel / Netlify)
 
 - Set all environment variables
 
 - Add:
+
 ```bash
 VITE_API_URL=https://your-backend.com
 ```
+
 ### For Backend (Render / Railway)
+
 - Allow CORS from your frontend domain
 
 - Ensure .env contains:
 
-    - JWT_SECRET
+  - JWT_SECRET
 
-    - Stripe keys
+  - Stripe keys
 
-    - MongoDB URI
+  - MongoDB URI
 
 ---
 
 ## 🧑‍💻 Developer Notes
+
 ### 🚨 Important Fixes Integrated
 
 - Fixed "Rendered fewer hooks" issue (moved `useEffect` before conditional returns)

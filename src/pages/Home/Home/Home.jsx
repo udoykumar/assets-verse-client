@@ -8,7 +8,7 @@ import Packages from "../Packages/Packages";
 import Testimonials from "../Testimonials/Testimonials";
 export default function Home() {
   return (
-    <div className="md:space-y-14 space-y-12 bg-[#16676A]/50  py-10 container mx-auto">
+    <div className="md:space-y-14 space-y-12 bg-[#16676A]/20  py-10 container mx-auto">
       <Hero />
       <About />
       <Packages />
